@@ -1,0 +1,89 @@
+# ==============================
+# Java / Maven
+# ==============================
+target/
+**/target/
+*.class
+*.jar
+*.war
+*.ear
+hs_err_pid*
+
+# Maven Wrapper — KEEP
+!.mvn/wrapper/maven-wrapper.jar
+
+# ==============================
+# Gradle
+# ==============================
+.gradle/
+build/
+**/build/
+
+# ==============================
+# IntelliJ IDEA
+# ==============================
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# ==============================
+# Eclipse
+# ==============================
+.classpath
+.project
+.settings/
+
+# ==============================
+# VS Code
+# ==============================
+.vscode/
+
+# ==============================
+# Environment / Secrets
+# ==============================
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+secrets/
+
+# ==============================
+# Logs
+# ==============================
+*.log
+logs/
+
+# ==============================
+# OS
+# ==============================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==============================
+# Temporary files
+# ==============================
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# ==============================
+# Test reports / Coverage
+# ==============================
+surefire-reports/
+failsafe-reports/
+jacoco.exec
+jacoco.xml
+coverage/
+
+# ==============================
+# Docker
+# ==============================
+docker-compose.override.yml
+compose.override.yaml

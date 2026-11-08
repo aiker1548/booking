@@ -1,0 +1,46 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: booking-service
+          uri: lb://BOOKING-SERVICE
+          predicates:
+            - Path=/api/bookings/**
+          filters:
+            - StripPrefix=1
+
+        - id: booking-auth
+          uri: lb://BOOKING-SERVICE
+          predicates:
+            - Path=/api/auth/**
+
+        - id: hotel-service
+          uri: lb://HOTEL-SERVICE
+          predicates:
+            - Path=/api/hotels/**
+          filters:
+            - StripPrefix=1
+        - id: room-service
+          uri: lb://HOTEL-SERVICE
+          predicates:
+            - Path=/api/rooms/**
+          filters:
+            - StripPrefix=1
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,gateway
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery-server:8761/eureka/
+  instance:
+    preferIpAddress: true
