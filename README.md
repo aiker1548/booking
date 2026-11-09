@@ -230,7 +230,6 @@ Authorization: Bearer <TOKEN>
 Content-Type: application/json
 
 {
-  "userId": "<USER_ID>",
   "hotelId": "<HOTEL_ID>",
   "roomId": "<ROOM_ID>",
   "startDate": "2026-12-10",
@@ -253,15 +252,8 @@ curl -X POST http://localhost:8080/api/bookings \
   }'
 ```
 
-`USER_ID`, `HOTEL_ID` и `ROOM_ID` должны соответствовать существующим записям. `USER_ID` должен принадлежать авторизованному пользователю.
+`HOTEL_ID` и `ROOM_ID` должны соответствовать существующим записям.
 
-Идентификатор пользователя можно получить непосредственно из базы данных:
-
-```sql
-SELECT id, username, role
-FROM users
-WHERE username = 'demo-user';
-```
 
 При успешной операции бронирование получает статус `CONFIRMED`.
 
